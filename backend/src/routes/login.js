@@ -1,9 +1,8 @@
 'use strict';
 
 const router = require('express').Router();
+const { login } = require('../controllers/loginController');
 
-router.post('/login', (req, res) => {
-    res.status(200).send();
-});
+router.post('/login', login);
 
 module.exports = router;
