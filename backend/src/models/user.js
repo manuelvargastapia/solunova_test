@@ -7,6 +7,15 @@ module.exports = (sequelize, DataTypes) => {
         static associate({ Post }) {
             this.hasMany(Post, { foreignKey: 'userId' });
         }
+
+        // Don't return the user's password nor id
+        toJSON() {
+            return {
+                ...this.get(),
+                id: undefined,
+                password: undefined,
+            };
+        }
     }
 
     User.init(
