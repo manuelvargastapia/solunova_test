@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
             firstName: DataTypes.STRING,
             lastName: DataTypes.STRING,
             email: DataTypes.STRING,
-            userName: DataTypes.STRING,
+            username: DataTypes.STRING,
             password: DataTypes.STRING,
         },
         {
@@ -38,6 +38,11 @@ module.exports = (sequelize, DataTypes) => {
             },
         }
     );
+
+    // Instance method to check password validity
+    User.prototype.isPasswordValid = function (password) {
+        return bcrypt.compareSync(password, this.password);
+    };
 
     return User;
 };
