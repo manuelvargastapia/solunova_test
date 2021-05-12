@@ -5,20 +5,19 @@
 // error
 module.exports = (err, _, res, __) => {
     if (err && err.error && err.error.isJoi) {
-        res.status(400).json({
+        return res.status(400).json({
             success: false,
             data: {
                 error: `Invalid data in ${err.type}`,
                 message: err.error.toString(),
             },
         });
-    } else {
-        res.status(500).json({
-            success: false,
-            data: {
-                error: 'Internal server error',
-                message: err.message,
-            },
-        });
     }
+
+    return res.status(err.statusCode || 500).json({
+        success: false,
+        data: {
+            error: err.message || 'Internal server error',
+        },
+    });
 };
