@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import ErrorMessage from '../UI/ErrorMessage';
+import Card from '../UI/Card';
 import classes from './index.module.css';
 
 const Home = () => {
@@ -44,9 +45,9 @@ const Home = () => {
     return error ? (
         <ErrorMessage error={error} />
     ) : (
-        <div className={classes.home}>
+        <section className={classes.home}>
             {userInfo && (
-                <div className={classes['user-info']}>
+                <Card>
                     <div>Username: {userInfo.username}</div>
                     <div>Email: {userInfo.email}</div>
                     <div>
@@ -55,15 +56,10 @@ const Home = () => {
                     <div>Uuid: {userInfo.uuid}</div>
                     <div>Register time: {userInfo.createdAt}</div>
                     <div>Last update: {userInfo.updatedAt}</div>
-                    <button
-                        className={classes['logout-button']}
-                        onClick={logoutHandler}
-                    >
-                        Logout
-                    </button>
-                </div>
+                    <button onClick={logoutHandler}>Logout</button>
+                </Card>
             )}
-        </div>
+        </section>
     );
 };
 
