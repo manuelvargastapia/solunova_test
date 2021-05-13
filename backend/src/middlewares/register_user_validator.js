@@ -11,8 +11,8 @@ const validator = require('express-joi-validation').createValidator({
 
 // Define a schema to accept required fields
 const bodySchema = Joi.object({
-    firstName: Joi.string().required(),
-    lastName: Joi.string().required(),
+    firstname: Joi.string().required(),
+    lastname: Joi.string().required(),
     email: Joi.string().required(),
     username: Joi.string().required(),
     password: Joi.string().required(),

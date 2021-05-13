@@ -14,10 +14,10 @@ module.exports = {
                 type: Sequelize.UUID,
                 defaultValue: Sequelize.UUIDV4,
             },
-            firstName: {
+            firstname: {
                 type: Sequelize.STRING,
             },
-            lastName: {
+            lastname: {
                 type: Sequelize.STRING,
             },
             email: {
