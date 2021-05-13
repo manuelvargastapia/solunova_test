@@ -32,6 +32,9 @@ services:
             DB_PASSWORD: password
             DB_PORT: 5432
             DB_DIALECT: postgres
+            # Only for demonstration purposes, the JWT secret is passed
+            # directly as environmental variable
+            JWT_SECRET: jWtsekR3t
         depends_on: # Wait for DB being in a healthy state
             postgres:
                 condition: service_healthy

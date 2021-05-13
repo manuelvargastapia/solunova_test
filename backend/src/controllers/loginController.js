@@ -26,10 +26,9 @@ const login = async (req, res, next) => {
             return next(new ErrorResponse(401, 'Invalid credentials'));
         }
 
-        return res.status(200).json({
-            success: true,
-            token: 'asdasdasdasd',
-        });
+        return res
+            .status(200)
+            .json({ success: true, token: existingUser.getSignedToken() });
     } catch (error) {
         next(error);
     }

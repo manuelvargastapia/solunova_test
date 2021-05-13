@@ -12,6 +12,7 @@
         "cors": "2.8.5",
         "express": "4.17.1",
         "express-joi-validation": "5.0.0",
+        "jsonwebtoken": "8.5.1",
         "pg": "8.6.0",
         "pg-hstore": "2.3.3",
         "sequelize": "6.6.2"
