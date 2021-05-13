@@ -1,6 +1,8 @@
 'use strict';
 
+const jwt = require('jsonwebtoken');
 const { User } = require('../models');
+const ErrorResponse = require('../utils/error');
 
 const createUser = async (req, res, next) => {
     try {
@@ -15,6 +17,33 @@ const createUser = async (req, res, next) => {
     }
 };
 
-const getUser = () => {};
+const getUser = async (req, res, next) => {
+    const { authorization } = req.headers;
+    let token;
+
+    if (authorization && authorization.startsWith('Bearer')) {
+        token = authorization.split(' ')[1];
+    }
+
+    if (!token) {
+        return next(new ErrorResponse(401, 'Not authorized'));
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findByPk(decoded.id);
+
+        if (!user) {
+            return next(new ErrorResponse(404, 'User not found'));
+        }
+
+        return res.status(200).json({
+            success: true,
+            data: { user },
+        });
+    } catch (error) {
+        next(error);
+    }
+};
 
 module.exports = { createUser, getUser };
