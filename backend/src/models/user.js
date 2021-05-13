@@ -6,8 +6,8 @@ const jwt = require('jsonwebtoken');
 
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
-        static associate({ Post }) {
-            this.hasMany(Post, { foreignKey: 'userId' });
+        static associate({ Session }) {
+            this.hasMany(Session, { foreignKey: 'userUuid' });
         }
 
         // Don't return the user's password nor id
@@ -22,6 +22,11 @@ module.exports = (sequelize, DataTypes) => {
 
     User.init(
         {
+            uuid: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                allowNull: false,
+            },
             firstName: DataTypes.STRING,
             lastName: DataTypes.STRING,
             email: DataTypes.STRING,
@@ -38,6 +43,10 @@ module.exports = (sequelize, DataTypes) => {
                     user.password = bcrypt.hashSync(user.password, salt);
                 },
             },
+
+            // Define table name to prevent Sequelize unexpectedly assuming the
+            // plural name for the table: "Users"
+            tableName: 'User',
         }
     );
 

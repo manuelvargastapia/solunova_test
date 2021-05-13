@@ -5,19 +5,26 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Session extends Model {
         static associate({ User }) {
-            this.belongsTo(User, { foreignKey: 'userId' });
+            this.belongsTo(User, { foreignKey: 'userUuid' });
         }
     }
 
     Session.init(
         {
-            userId: DataTypes.INTEGER,
+            userUuid: {
+                type: DataTypes.UUID,
+                allowNull: false,
+            },
         },
         {
             sequelize,
             modelName: 'Session',
             createdAt: 'timestamp',
             updatedAt: false,
+
+            // Define table name to prevent Sequelize unexpectedly assuming the
+            // plural name for the table: "Sessions"
+            tableName: 'Session',
         }
     );
 
