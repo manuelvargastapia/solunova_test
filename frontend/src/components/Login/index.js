@@ -76,9 +76,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-                <button className={classes['login-button']} type="submit">
-                    Login
-                </button>
+                <button type="submit">Login</button>
                 <span className={classes['login-subtext']}>
                     Don't have an account? <Link to="/register">Register</Link>
                 </span>
