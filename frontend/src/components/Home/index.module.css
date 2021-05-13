@@ -1,0 +1,26 @@
+.home {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info {
+    width: 380px;
+    padding: 1.5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    background: #fff;
+    list-style-type: none;
+}
+
+.logout-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    background-color: blue;
+    color: #fff;
+}
