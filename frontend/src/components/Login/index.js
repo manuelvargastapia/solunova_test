@@ -2,7 +2,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import classes from './index.module.css';
-import '../../index.css';
 
 import React from 'react';
 import ErrorMessage from '../UI/ErrorMessage';
