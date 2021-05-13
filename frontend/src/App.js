@@ -11,7 +11,7 @@ import Home from './components/Home';
 const App = () => {
     return (
         <Router>
-            <div className="app">
+            <div>
                 <Switch>
                     <Route exact path="/">
                         <Redirect to="/login" />
