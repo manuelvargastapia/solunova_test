@@ -1,6 +1,6 @@
 'use strict';
 
-const { User } = require('../models');
+const { User, Session } = require('../models');
 const ErrorResponse = require('../utils/error');
 
 const login = async (req, res, next) => {
@@ -26,12 +26,27 @@ const login = async (req, res, next) => {
             return next(new ErrorResponse(401, 'Invalid credentials'));
         }
 
-        return res
-            .status(200)
-            .json({ success: true, token: existingUser.getSignedToken() });
+        res.status(200).json({
+            success: true,
+            token: existingUser.getSignedToken(),
+        });
+
+        // Forward the user to the next middleware after sending the response
+        res.locals.logedInUser = existingUser;
+        next();
     } catch (error) {
         next(error);
     }
 };
 
-module.exports = { login };
+// Store session instance right after login
+const sessionLogger = async (_, res, next) => {
+    try {
+        const user = res.locals.logedInUser;
+        await Session.create({ userUuid: user.uuid });
+    } catch (error) {
+        next(error);
+    }
+};
+
+module.exports = { login, sessionLogger };
