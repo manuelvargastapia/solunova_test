@@ -1,0 +1,11 @@
+.app {
+    height: 100vh;
+    padding: 5rem;
+}
+
+.app-logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-width: 30rem;
+}
