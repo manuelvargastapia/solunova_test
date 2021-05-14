@@ -4,7 +4,7 @@
     width: 90%;
     margin: 0 auto 5rem auto;
     position: relative;
-    color: white;
+    color: #fff;
     padding: 1rem;
 }
 
@@ -13,13 +13,6 @@
     text-shadow: 0 0 3px black, 0 0 5px black;
     margin-top: 0;
     font-family: Horizon;
-}
-
-@font-face {
-    font-family: 'Horizon';
-    src: local('Horizon'),
-        url('../../../assets//fonts/horizon.ttf') format('truetype');
-    font-weight: normal;
 }
 
 @media (max-width: 800px) {
