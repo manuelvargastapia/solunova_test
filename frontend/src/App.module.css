@@ -1,6 +1,9 @@
 .app {
     height: 100vh;
     padding: 5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .app-logo {
