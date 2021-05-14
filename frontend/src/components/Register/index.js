@@ -1,5 +1,5 @@
 import RegisterForm from './RegisterForm';
-import BackgroundImage from '../Layout/BackgroundImage';
+import VideoEmbed from '../Layout/VideoEmbed';
 import classes from './index.module.css';
 
 const Register = () => {
@@ -8,8 +8,8 @@ const Register = () => {
             <div className={classes['left-form']}>
                 <RegisterForm />
             </div>
-            <div className={classes['right-image']}>
-                <BackgroundImage />
+            <div className={classes['right-video']}>
+                <VideoEmbed />
             </div>
         </section>
     );
