@@ -5,3 +5,15 @@
     max-width: 30rem;
     z-index: -1;
 }
+
+@media (max-width: 1400px) {
+    .logo {
+        max-width: 20rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+}

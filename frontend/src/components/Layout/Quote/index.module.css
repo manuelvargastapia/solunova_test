@@ -21,3 +21,9 @@
         url('../../../assets//fonts/horizon.ttf') format('truetype');
     font-weight: normal;
 }
+
+@media (max-width: 800px) {
+    .quote h2 {
+        font-size: 1.5rem;
+    }
+}
