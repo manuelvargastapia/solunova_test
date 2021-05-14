@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import { FaUser, FaLock } from 'react-icons/fa';
 import ErrorMessage from '../../UI/ErrorMessage';
-import Card from '../../UI/Card';
 import Input from '../../UI/Input';
 import classes from './index.module.css';
 
@@ -50,36 +50,31 @@ const LoginForm = () => {
     };
 
     return (
-        <Card className={classes.form}>
+        <div className={classes.form}>
             <form onSubmit={loginHandler}>
-                <h3 className={classes['form-title']}>Login</h3>
+                <h3 className={classes['form-title']}>Welcome</h3>
                 {error && <ErrorMessage error={error} />}
                 <Input
                     ref={usernameOrEmailInputRef}
-                    label="Username or Email"
-                    input={{
-                        id: 'usernameOrEmail',
-                        type: 'text',
-                        required: true,
-                        placeholder: 'Enter username or email',
-                    }}
+                    type="text"
+                    required
+                    placeholder="Username or Email"
+                    icon={<FaUser />}
                 />
                 <Input
                     ref={passwordInputRef}
-                    label="Password"
-                    input={{
-                        id: 'password',
-                        type: 'password',
-                        required: true,
-                        placeholder: 'Enter password',
-                    }}
+                    type="password"
+                    required={true}
+                    placeholder="Password"
+                    icon={<FaLock />}
                 />
-                <button type="submit">Login</button>
+                <button type="submit">LOGIN</button>
                 <span className={classes['form-subtext']}>
-                    Don't have an account? <Link to="/register">Register</Link>
+                    Don't have an account? Create it{' '}
+                    <Link to="/register">here</Link>
                 </span>
             </form>
-        </Card>
+        </div>
     );
 };
 
