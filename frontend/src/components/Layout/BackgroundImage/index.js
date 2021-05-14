@@ -13,8 +13,8 @@ const BackgroundImage = () => {
 
     useEffect(() => {
         setInterval(() => {
-            setImageNumber(Math.floor(Math.random() * 7) + 1);
-        }, 20000);
+            setImageNumber((prev) => (prev === 6 ? 7 : (prev + 1) % 7));
+        }, 10000);
     }, []);
 
     return transitions(({ opacity }, item) => (
