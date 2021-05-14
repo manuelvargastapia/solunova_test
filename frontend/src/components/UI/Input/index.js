@@ -2,9 +2,9 @@ import { forwardRef } from 'react';
 import classes from './index.module.css';
 
 const Input = forwardRef(
-    ({ icon, type, placeholder, required = false }, ref) => {
+    ({ className, icon, type, placeholder, required = false }, ref) => {
         return (
-            <div className={classes.input}>
+            <div className={`${classes.input} ${className}`}>
                 <div className={classes['input-icon']}>{icon}</div>
                 <input
                     ref={ref}
