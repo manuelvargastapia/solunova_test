@@ -1,0 +1,13 @@
+.register {
+    display: flex;
+}
+
+.right-image {
+    position: relative;
+    height: 100vh;
+    flex: 3;
+}
+
+.left-form {
+    flex: 2;
+}

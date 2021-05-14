@@ -1,10 +1,19 @@
 import { useState, useRef } from 'react';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import ErrorMessage from '../../UI/ErrorMessage';
-import Card from '../../UI/Card';
+import Form from '../../UI/Form';
 import Input from '../../UI/Input';
 import classes from './index.module.css';
+
+const Subtext = () => {
+    return (
+        <span className={classes.subtext}>
+            Already have an account? Go to <Link to="/login">login</Link>
+        </span>
+    );
+};
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -48,68 +57,52 @@ const Register = () => {
     };
 
     return (
-        <section className={classes.form}>
-            <Card>
-                <form onSubmit={registerHandler}>
-                    <h3 className={classes['form-title']}>Register</h3>
-                    {error && <ErrorMessage error={error} />}
-                    <Input
-                        ref={usernameInputRef}
-                        label="Username"
-                        input={{
-                            id: 'username',
-                            type: 'text',
-                            required: true,
-                            placeholder: 'Enter username',
-                        }}
-                    />
-                    <Input
-                        ref={firstnameInputRef}
-                        label="Firstname"
-                        input={{
-                            id: 'firstname',
-                            type: 'text',
-                            required: true,
-                            placeholder: 'Enter firstname',
-                        }}
-                    />
-                    <Input
-                        ref={lastnameInputRef}
-                        label="Lastname"
-                        input={{
-                            id: 'lastname',
-                            type: 'text',
-                            required: true,
-                            placeholder: 'Enter lastname',
-                        }}
-                    />
-                    <Input
-                        ref={emailInputRef}
-                        label="Email"
-                        input={{
-                            id: 'email',
-                            type: 'email',
-                            required: true,
-                            placeholder: 'Enter email',
-                        }}
-                    />
-                    <Input
-                        ref={passwordInputRef}
-                        label="Password"
-                        input={{
-                            id: 'password',
-                            type: 'password',
-                            required: true,
-                            placeholder: 'Enter password',
-                        }}
-                    />
-                    <button type="submit">Register</button>
-                    <span className={classes['form-subtext']}>
-                        Already have an account? <Link to="/login">Login</Link>
-                    </span>
-                </form>
-            </Card>
-        </section>
+        <Form
+            title="Create an account"
+            onSubmitHandler={registerHandler}
+            submitButtonTitle="REGISTER"
+            subtext={<Subtext />}
+        >
+            {error && <ErrorMessage error={error} />}
+            <div className={classes.inputs}>
+                <Input
+                    ref={emailInputRef}
+                    className={classes['first-input']}
+                    type="email"
+                    required
+                    placeholder="Email"
+                    icon={<FaEnvelope />}
+                />
+                <Input
+                    ref={firstnameInputRef}
+                    type="text"
+                    required
+                    placeholder="Firstname"
+                    icon={<FaUser />}
+                />
+                <Input
+                    ref={lastnameInputRef}
+                    type="text"
+                    required
+                    placeholder="Lastname"
+                    icon={<FaUser />}
+                />
+                <Input
+                    ref={usernameInputRef}
+                    type="text"
+                    required
+                    placeholder="Username"
+                    icon={<FaUser />}
+                />
+                <Input
+                    ref={passwordInputRef}
+                    type="password"
+                    required
+                    placeholder="Password"
+                    icon={<FaLock />}
+                />
+            </div>
+        </Form>
     );
 };
 

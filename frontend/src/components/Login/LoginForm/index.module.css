@@ -1,43 +1,5 @@
-.form {
-    text-align: center;
-    max-width: 25rem;
-    margin: 10rem auto 0 auto;
-    animation: form-appear 1s ease-out forwards;
-}
-
-.form-title {
-    margin-bottom: 5rem;
-    font-size: 3.5rem;
-    font-family: Horizon;
-}
-
-.form button {
-    padding: 0.6rem;
-    cursor: pointer;
-    width: 65%;
-    font-size: 1.3rem;
-    border: none;
-    background-color: #80bee0;
-    color: #fff;
-    margin-top: 2rem;
-    border-radius: 50px;
-    font-weight: bold;
-}
-
-.form-subtext {
+.subtext {
     font-size: 1.2rem;
     display: block;
     margin-top: 6rem;
-}
-
-@keyframes form-appear {
-    from {
-        opacity: 0;
-        transform: translateY(3rem);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }

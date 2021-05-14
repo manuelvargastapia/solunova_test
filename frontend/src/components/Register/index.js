@@ -1,12 +1,17 @@
-import Quote from '../Layout/Quote';
 import RegisterForm from './RegisterForm';
+import BackgroundImage from '../Layout/BackgroundImage';
+import classes from './index.module.css';
 
 const Register = () => {
     return (
-        <>
-            <Quote text="I would have wanted her to be… curious. And willful, unstoppable even… but with enough compassion to… heal the world… just a little bit" />
-            <RegisterForm />
-        </>
+        <section className={classes.register}>
+            <div className={classes['left-form']}>
+                <RegisterForm />
+            </div>
+            <div className={classes['right-image']}>
+                <BackgroundImage />
+            </div>
+        </section>
     );
 };
 

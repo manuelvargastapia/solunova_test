@@ -3,8 +3,17 @@ import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
 import ErrorMessage from '../../UI/ErrorMessage';
+import Form from '../../UI/Form';
 import Input from '../../UI/Input';
 import classes from './index.module.css';
+
+const Subtext = () => {
+    return (
+        <span className={classes.subtext}>
+            Don't have an account? Create it <Link to="/register">here</Link>
+        </span>
+    );
+};
 
 const LoginForm = () => {
     const [error, setError] = useState('');
@@ -50,31 +59,28 @@ const LoginForm = () => {
     };
 
     return (
-        <div className={classes.form}>
-            <form onSubmit={loginHandler}>
-                <h3 className={classes['form-title']}>Welcome</h3>
-                {error && <ErrorMessage error={error} />}
-                <Input
-                    ref={usernameOrEmailInputRef}
-                    type="text"
-                    required
-                    placeholder="Username or Email"
-                    icon={<FaUser />}
-                />
-                <Input
-                    ref={passwordInputRef}
-                    type="password"
-                    required={true}
-                    placeholder="Password"
-                    icon={<FaLock />}
-                />
-                <button type="submit">LOGIN</button>
-                <span className={classes['form-subtext']}>
-                    Don't have an account? Create it{' '}
-                    <Link to="/register">here</Link>
-                </span>
-            </form>
-        </div>
+        <Form
+            title="Welcome"
+            onSubmitHandler={loginHandler}
+            submitButtonTitle="LOGIN"
+            subtext={<Subtext />}
+        >
+            {error && <ErrorMessage error={error} />}
+            <Input
+                ref={usernameOrEmailInputRef}
+                type="text"
+                required
+                placeholder="Username or Email"
+                icon={<FaUser />}
+            />
+            <Input
+                ref={passwordInputRef}
+                type="password"
+                required={true}
+                placeholder="Password"
+                icon={<FaLock />}
+            />
+        </Form>
     );
 };
 
