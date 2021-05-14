@@ -1,0 +1,13 @@
+.login {
+    display: flex;
+}
+
+.left-image {
+    position: relative;
+    height: 100vh;
+    flex: 3;
+}
+
+.right-form {
+    flex: 2;
+}

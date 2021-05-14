@@ -50,39 +50,36 @@ const LoginForm = () => {
     };
 
     return (
-        <section className={classes.form}>
-            <Card>
-                <form onSubmit={loginHandler}>
-                    <h3 className={classes['form-title']}>Login</h3>
-                    {error && <ErrorMessage error={error} />}
-                    <Input
-                        ref={usernameOrEmailInputRef}
-                        label="Username or Email"
-                        input={{
-                            id: 'usernameOrEmail',
-                            type: 'text',
-                            required: true,
-                            placeholder: 'Enter username or email',
-                        }}
-                    />
-                    <Input
-                        ref={passwordInputRef}
-                        label="Password"
-                        input={{
-                            id: 'password',
-                            type: 'password',
-                            required: true,
-                            placeholder: 'Enter password',
-                        }}
-                    />
-                    <button type="submit">Login</button>
-                    <span className={classes['form-subtext']}>
-                        Don't have an account?{' '}
-                        <Link to="/register">Register</Link>
-                    </span>
-                </form>
-            </Card>
-        </section>
+        <Card className={classes.form}>
+            <form onSubmit={loginHandler}>
+                <h3 className={classes['form-title']}>Login</h3>
+                {error && <ErrorMessage error={error} />}
+                <Input
+                    ref={usernameOrEmailInputRef}
+                    label="Username or Email"
+                    input={{
+                        id: 'usernameOrEmail',
+                        type: 'text',
+                        required: true,
+                        placeholder: 'Enter username or email',
+                    }}
+                />
+                <Input
+                    ref={passwordInputRef}
+                    label="Password"
+                    input={{
+                        id: 'password',
+                        type: 'password',
+                        required: true,
+                        placeholder: 'Enter password',
+                    }}
+                />
+                <button type="submit">Login</button>
+                <span className={classes['form-subtext']}>
+                    Don't have an account? <Link to="/register">Register</Link>
+                </span>
+            </form>
+        </Card>
     );
 };
 

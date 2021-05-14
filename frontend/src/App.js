@@ -7,13 +7,10 @@ import {
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
-import BackgroundLogo from './components/Layout/BackgroundLogo';
-import BackgroundImage from './components/Layout/BackgroundImage';
-import classes from './App.module.css';
 
 const App = () => {
     return (
-        <main className={classes.app}>
+        <main>
             <Router>
                 <Switch>
                     <Route exact path="/">
@@ -24,8 +21,6 @@ const App = () => {
                     <Route exact path="/home" component={Home} />
                 </Switch>
             </Router>
-            <BackgroundLogo />
-            <BackgroundImage />
         </main>
     );
 };

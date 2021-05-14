@@ -1,12 +1,19 @@
-import Quote from '../Layout/Quote';
 import LoginForm from './LoginForm';
+import BackgroundImage from '../Layout/BackgroundImage';
+import BackgroundLogo from '../Layout/BackgroundLogo';
+import classes from './index.module.css';
 
 const Login = () => {
     return (
-        <>
-            <Quote text="Being smart will count for nothing if you don’t make the world better. You have to use your smarts to count for something, to serve life, not death" />
-            <LoginForm />
-        </>
+        <section className={classes.login}>
+            <div className={classes['left-image']}>
+                <BackgroundImage />
+                <BackgroundLogo />
+            </div>
+            <div className={classes['right-form']}>
+                <LoginForm />
+            </div>
+        </section>
     );
 };
 
