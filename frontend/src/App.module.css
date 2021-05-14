@@ -1,14 +1,4 @@
 .app {
     height: 100vh;
     padding: 5rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.app-logo {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    max-width: 30rem;
 }
