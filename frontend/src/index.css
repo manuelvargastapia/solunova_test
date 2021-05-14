@@ -8,7 +8,12 @@
 }
 
 body {
-    color: rgb(56, 56, 56);
+    color: #eee;
+    background-color: #303030;
+}
+
+a {
+    color: #d5baf8;
 }
 
 @font-face {
