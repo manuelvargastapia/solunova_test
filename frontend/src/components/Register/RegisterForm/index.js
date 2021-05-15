@@ -60,7 +60,7 @@ const Register = () => {
         <Form
             title="Create an account"
             onSubmitHandler={registerHandler}
-            submitButtonTitle="REGISTER"
+            submitButtonTitle="register"
             subtext={<Subtext />}
         >
             {error && <ErrorMessage error={error} />}

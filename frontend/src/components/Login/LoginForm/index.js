@@ -62,7 +62,7 @@ const LoginForm = () => {
         <Form
             title="Welcome"
             onSubmitHandler={loginHandler}
-            submitButtonTitle="LOGIN"
+            submitButtonTitle="login"
             subtext={<Subtext />}
         >
             {error && <ErrorMessage error={error} />}
