@@ -16,11 +16,12 @@
 }
 
 .input input:focus {
-    border: 2px solid #80bee0;
+    outline: 2px solid #d35400;
 }
 
 .input-icon {
     position: absolute;
-    color: #80bee0;
+    color: #d35400;
     min-width: 50px;
+    padding-top: 5px;
 }
