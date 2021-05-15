@@ -1,10 +1,26 @@
-.item-left-td {
-    width: 10rem;
+.item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.item-label {
+    width: fit-content;
+    word-wrap: break-word;
+    color: #fff67a;
+}
+
+.item-value {
+    text-align: end;
     word-wrap: break-word;
 }
 
-.item-right-td {
-    text-align: end;
-    font-weight: bold;
-    word-wrap: break-word;
+@media only screen and (max-width: 1200px) {
+    .item {
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 0.6rem;
+    }
 }

@@ -5,9 +5,9 @@ const UserInfo = ({ children }) => {
     return (
         <div className={classes['user-info']}>
             <img src={profileIcon} alt="Profile icon" />
-            <div>
+            <div className={classes['user-info-container']}>
                 <h2>your profile</h2>
-                <table>{children}</table>
+                <div className={classes['user-info-children']}>{children}</div>
             </div>
         </div>
     );

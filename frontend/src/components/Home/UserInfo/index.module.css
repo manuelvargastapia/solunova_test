@@ -1,6 +1,6 @@
 .user-info {
     display: flex;
-    width: 40vw;
+    width: 760px;
     padding: 2rem;
     margin: 12rem auto auto 10rem;
     background-color: #303030cc;
@@ -18,13 +18,15 @@
 .user-info h2 {
     font-size: 2rem;
     font-family: Horizon;
+    margin-bottom: 2rem;
 }
 
-.user-info table {
-    margin-top: 2rem;
-    font-size: 1.1rem;
-    table-layout: fixed;
+.user-info-container {
     width: 100%;
+}
+
+.user-info-children {
+    word-break: break-all;
 }
 
 @keyframes info-appear {
@@ -36,5 +38,22 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .user-info {
+        width: 400px;
+        flex-direction: column;
+        align-items: center;
+        margin: 10rem auto;
+    }
+
+    .user-info img {
+        margin: auto;
+    }
+
+    .user-info h2 {
+        text-align: center;
     }
 }
