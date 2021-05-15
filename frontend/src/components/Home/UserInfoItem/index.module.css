@@ -1,0 +1,10 @@
+.item-left-td {
+    width: 10rem;
+    word-wrap: break-word;
+}
+
+.item-right-td {
+    text-align: end;
+    font-weight: bold;
+    word-wrap: break-word;
+}
