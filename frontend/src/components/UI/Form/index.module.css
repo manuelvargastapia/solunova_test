@@ -17,11 +17,20 @@
     width: 65%;
     font-size: 1.3rem;
     border: none;
-    background-color: #80bee0;
+    background-color: #d35400;
     color: #fff;
     margin-top: 2rem;
     border-radius: 50px;
     font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.form button:hover {
+    color: #fff;
+    box-shadow: 0 0 15px #d35400;
+    text-shadow: 0 0 15px #fff;
+    transition: 0.5s;
 }
 
 @keyframes form-appear {
