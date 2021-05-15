@@ -1,17 +1,18 @@
 .home {
-    max-width: 20rem;
-    margin: 2rem auto;
-    animation: info-appear 1s ease-out forwards;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/images/aloy.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.home button {
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1rem;
-    border: none;
-    background-color: #80bee0;
-    color: #fff;
+.home-logo {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    max-width: 20rem;
 }
 
 @keyframes info-appear {
