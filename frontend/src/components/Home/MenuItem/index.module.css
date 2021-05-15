@@ -1,0 +1,25 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 4rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.item:hover {
+    font-size: 45px;
+    transition: 0.3s;
+}
+
+.item:hover img {
+    width: 70px;
+    transition: 0.3s;
+}
+
+.item img {
+    margin-right: 1rem;
+    width: 60px;
+    transition: 0.3s;
+}
