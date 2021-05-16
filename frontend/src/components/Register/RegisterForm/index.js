@@ -58,7 +58,7 @@ const Register = () => {
 
     return (
         <Form
-            title="Create an account"
+            title="Register"
             onSubmitHandler={registerHandler}
             submitButtonTitle="register"
             subtext={<Subtext />}

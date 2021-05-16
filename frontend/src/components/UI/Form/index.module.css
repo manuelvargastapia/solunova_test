@@ -6,9 +6,10 @@
 }
 
 .form-title {
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     font-size: 3.5rem;
     font-family: Horizon;
+    text-shadow: 0 0 3px #303030, 0 0 5px #303030;
 }
 
 .form button {
@@ -42,5 +43,35 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1400px) {
+    .form {
+        margin: 8rem 2rem 0 2rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .form {
+        margin: 5rem 2rem 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form {
+        margin: 5rem auto 0 auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .form {
+        margin: 5rem 2rem 0 2rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .form {
+        margin: 1rem 2rem 0 2rem;
     }
 }

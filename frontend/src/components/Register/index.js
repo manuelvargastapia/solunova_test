@@ -5,7 +5,10 @@ import classes from './index.module.css';
 const Register = () => {
     return (
         <section className={classes.register}>
-            <div className={classes['left-form']}>
+            <div>
+                <div className={classes['form-background']}>
+                    <VideoEmbed />
+                </div>
                 <RegisterForm />
             </div>
             <div className={classes['right-video']}>

@@ -10,7 +10,10 @@ const Login = () => {
                 <BackgroundImage />
                 <BackgroundLogo />
             </div>
-            <div className={classes['right-form']}>
+            <div>
+                <div className={classes['form-background']}>
+                    <BackgroundImage />
+                </div>
                 <LoginForm />
             </div>
         </section>

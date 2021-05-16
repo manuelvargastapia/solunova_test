@@ -1,13 +1,27 @@
 .login {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 40%;
 }
 
 .left-image {
     position: relative;
     height: 100vh;
-    flex: 3;
 }
 
-.right-form {
-    flex: 2;
+.form-background {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .login {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .left-image {
+        display: none;
+    }
+
+    .form-background {
+        display: flex;
+    }
 }
