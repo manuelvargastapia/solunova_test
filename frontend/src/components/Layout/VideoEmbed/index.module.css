@@ -4,3 +4,21 @@
     height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 768px) {
+    .video {
+        height: 130%;
+    }
+}
+
+@media (max-width: 380px) {
+    .video {
+        height: 150%;
+    }
+}
+
+@media (max-width: 320px) {
+    .video {
+        height: 170%;
+    }
+}
