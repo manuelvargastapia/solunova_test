@@ -5,6 +5,7 @@ import { FaUser, FaLock } from 'react-icons/fa';
 import ErrorMessage from '../../UI/ErrorMessage';
 import Form from '../../UI/Form';
 import Input from '../../UI/Input';
+import BackgroundLogo from '../../Layout/BackgroundLogo';
 import classes from './index.module.css';
 
 const Subtext = () => {
@@ -59,28 +60,31 @@ const LoginForm = () => {
     };
 
     return (
-        <Form
-            title="Welcome"
-            onSubmitHandler={loginHandler}
-            submitButtonTitle="login"
-            subtext={<Subtext />}
-        >
-            {error && <ErrorMessage error={error} />}
-            <Input
-                ref={usernameOrEmailInputRef}
-                type="text"
-                required
-                placeholder="Username or Email"
-                icon={<FaUser />}
-            />
-            <Input
-                ref={passwordInputRef}
-                type="password"
-                required={true}
-                placeholder="Password"
-                icon={<FaLock />}
-            />
-        </Form>
+        <>
+            <BackgroundLogo className={classes.logo} />
+            <Form
+                title="Welcome"
+                onSubmitHandler={loginHandler}
+                submitButtonTitle="login"
+                subtext={<Subtext />}
+            >
+                {error && <ErrorMessage error={error} />}
+                <Input
+                    ref={usernameOrEmailInputRef}
+                    type="text"
+                    required
+                    placeholder="Username or Email"
+                    icon={<FaUser />}
+                />
+                <Input
+                    ref={passwordInputRef}
+                    type="password"
+                    required={true}
+                    placeholder="Password"
+                    icon={<FaLock />}
+                />
+            </Form>
+        </>
     );
 };
 

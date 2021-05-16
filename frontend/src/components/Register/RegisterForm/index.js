@@ -5,6 +5,7 @@ import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import ErrorMessage from '../../UI/ErrorMessage';
 import Form from '../../UI/Form';
 import Input from '../../UI/Input';
+import BackgroundLogo from '../../Layout/BackgroundLogo';
 import classes from './index.module.css';
 
 const Subtext = () => {
@@ -57,52 +58,55 @@ const Register = () => {
     };
 
     return (
-        <Form
-            title="Register"
-            onSubmitHandler={registerHandler}
-            submitButtonTitle="register"
-            subtext={<Subtext />}
-        >
-            {error && <ErrorMessage error={error} />}
-            <div className={classes.inputs}>
-                <Input
-                    ref={emailInputRef}
-                    className={classes['first-input']}
-                    type="email"
-                    required
-                    placeholder="Email"
-                    icon={<FaEnvelope />}
-                />
-                <Input
-                    ref={firstnameInputRef}
-                    type="text"
-                    required
-                    placeholder="Firstname"
-                    icon={<FaUser />}
-                />
-                <Input
-                    ref={lastnameInputRef}
-                    type="text"
-                    required
-                    placeholder="Lastname"
-                    icon={<FaUser />}
-                />
-                <Input
-                    ref={usernameInputRef}
-                    type="text"
-                    required
-                    placeholder="Username"
-                    icon={<FaUser />}
-                />
-                <Input
-                    ref={passwordInputRef}
-                    type="password"
-                    required
-                    placeholder="Password"
-                    icon={<FaLock />}
-                />
-            </div>
-        </Form>
+        <>
+            <BackgroundLogo className={classes.logo} />
+            <Form
+                title="Register"
+                onSubmitHandler={registerHandler}
+                submitButtonTitle="register"
+                subtext={<Subtext />}
+            >
+                {error && <ErrorMessage error={error} />}
+                <div className={classes.inputs}>
+                    <Input
+                        ref={emailInputRef}
+                        className={classes['first-input']}
+                        type="email"
+                        required
+                        placeholder="Email"
+                        icon={<FaEnvelope />}
+                    />
+                    <Input
+                        ref={firstnameInputRef}
+                        type="text"
+                        required
+                        placeholder="Firstname"
+                        icon={<FaUser />}
+                    />
+                    <Input
+                        ref={lastnameInputRef}
+                        type="text"
+                        required
+                        placeholder="Lastname"
+                        icon={<FaUser />}
+                    />
+                    <Input
+                        ref={usernameInputRef}
+                        type="text"
+                        required
+                        placeholder="Username"
+                        icon={<FaUser />}
+                    />
+                    <Input
+                        ref={passwordInputRef}
+                        type="password"
+                        required
+                        placeholder="Password"
+                        icon={<FaLock />}
+                    />
+                </div>
+            </Form>
+        </>
     );
 };
 
