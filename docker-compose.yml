@@ -44,3 +44,12 @@ services:
             interval: 5s
             timeout: 3s
             retries: 3
+
+    client:
+        container_name: solunova_test_frontend
+        build: ./frontend # Build image from Dockefile in /frontend
+        ports:
+            - '5000:5000'
+        depends_on:
+            backend:
+                condition: service_healthy
