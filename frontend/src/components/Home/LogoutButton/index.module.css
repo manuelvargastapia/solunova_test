@@ -6,7 +6,7 @@
     padding: 0.6rem;
     font-size: 1.7rem;
     background-color: #d35400;
-    width: 50%;
+    width: 5rem;
     color: white;
     cursor: pointer;
     border-radius: 50px;
@@ -16,4 +16,10 @@
 .logout:hover {
     box-shadow: 0 0 15px #d35400;
     transition: 0.5s;
+}
+
+@media (max-width: 1400px) {
+    .logout {
+        font-size: 1.5rem;
+    }
 }

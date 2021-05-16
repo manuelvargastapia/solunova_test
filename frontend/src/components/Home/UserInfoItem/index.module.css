@@ -17,10 +17,14 @@
     word-wrap: break-word;
 }
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
     .item {
         flex-direction: column;
         align-items: start;
         margin-bottom: 0.6rem;
+    }
+
+    .item-value {
+        text-align: start;
     }
 }

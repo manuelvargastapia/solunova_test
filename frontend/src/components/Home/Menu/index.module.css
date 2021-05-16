@@ -3,9 +3,29 @@
     width: 100%;
     grid-template-columns: 23% 23% 23% 23% 8%;
     padding: 2rem 0;
-    font-size: 40px;
-    font-weight: bold;
     position: fixed;
     bottom: 0;
     left: 0;
+}
+
+@media (max-width: 1200px) {
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: fit-content;
+        margin: 0 auto 2rem auto;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        position: relative;
+        padding: 0;
+        margin: 0 auto 2rem auto;
+        width: fit-content;
+    }
 }
