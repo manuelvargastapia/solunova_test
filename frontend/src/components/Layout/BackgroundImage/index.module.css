@@ -7,3 +7,9 @@
     background-repeat: no-repeat;
     will-change: opacity;
 }
+
+@media (max-width: 768px) {
+    .background-img {
+        height: 120vh;
+    }
+}
