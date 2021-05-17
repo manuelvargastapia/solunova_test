@@ -28,7 +28,9 @@ const Home = () => {
     };
 
     return error ? (
-        <ErrorMessage error={error} />
+        <div className={classes['home-error']}>
+            <ErrorMessage error={error} />
+        </div>
     ) : (
         <section className={classes.home}>
             {userInfo && (

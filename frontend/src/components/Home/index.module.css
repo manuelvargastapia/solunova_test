@@ -15,6 +15,13 @@
     max-width: 20rem;
 }
 
+.home-error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media (max-width: 1200px) {
     .home {
         overflow-y: scroll;
