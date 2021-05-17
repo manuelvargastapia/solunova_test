@@ -38,4 +38,5 @@ Use the following settings to connect to the database:
 During development, tune the setting in [backend/src/config/db_config.js](backend/src/config/db_config.js). Note that a random port **2345** has been used to avoid potential conflict with running instances; see [docker-compose.yml](docker-compose.yml).
 
 *Consider that the [frontend/public/videos/trailer.mp4](frontend/public/videos/trailer.mp4) file is versioned using [Git LFS](https://git-lfs.github.com/). Only by cloning the repo, the file will be included in the local copy. Downloading as a ZIP will not have the same effect.
+
 **Note that `sudo` is not required if [this optional configuration](https://docs.docker.com/engine/install/linux-postinstall/) is implemented.
