@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment';
 import ErrorMessage from '../UI/ErrorMessage';
 import BackgroundLogo from '../Layout/BackgroundLogo';
 import Menu from './Menu';
@@ -51,6 +52,10 @@ const Home = () => {
         history.push('/login');
     };
 
+    const formatDate = (date) => {
+        return moment(date).format('dddd, MMMM Do YYYY, h:mm:ss a');
+    };
+
     return error ? (
         <ErrorMessage error={error} />
     ) : (
@@ -65,7 +70,7 @@ const Home = () => {
                     />
                     <UserInfoItem
                         label="Register time"
-                        value={userInfo.createdAt}
+                        value={formatDate(userInfo.createdAt)}
                     />
                 </UserInfo>
             )}
