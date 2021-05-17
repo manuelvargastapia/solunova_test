@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
-import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa';
+import { login } from '../../../helpers/api';
 import ErrorMessage from '../../UI/ErrorMessage';
 import Form from '../../UI/Form';
 import Input from '../../UI/Input';
@@ -25,34 +25,15 @@ const LoginForm = () => {
     const loginHandler = async (event) => {
         event.preventDefault();
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        const credentials = {};
-        const usernameOrEmail = usernameOrEmailInputRef.current.value;
-        if (usernameOrEmail.includes('@')) {
-            credentials.email = usernameOrEmail;
-        } else {
-            credentials.username = usernameOrEmail;
-        }
-
         try {
-            const { data } = await axios.post(
-                '/api/login',
-                {
-                    ...credentials,
-                    password: passwordInputRef.current.value,
-                },
-                config
-            );
-
-            localStorage.setItem('authToken', data.token);
+            const authToken = await login({
+                usernameOrEmail: usernameOrEmailInputRef.current.value,
+                password: passwordInputRef.current.value,
+            });
+            localStorage.setItem('authToken', authToken);
             history.push('/home');
         } catch (error) {
-            setError(error.response.data.data.error);
+            setError(error);
             setTimeout(() => {
                 setError('');
             }, 5000);

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getUserInfo } from '../../../helpers/api';
 
 const useUserInfo = (history) => {
     const [error, setError] = useState('');
@@ -11,19 +11,11 @@ const useUserInfo = (history) => {
         }
 
         const fetchUserInfo = async () => {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${localStorage.getItem(
-                        'authToken'
-                    )}`,
-                },
-            };
-
             try {
-                const { data } = await axios.get('/api/users', config);
-                setUserInfo(data.data.user);
-            } catch (error) {
+                const authToken = localStorage.getItem('authToken');
+                const userInfo = await getUserInfo(authToken);
+                setUserInfo(userInfo);
+            } catch (_) {
                 localStorage.removeItem('authToken');
                 setError("You're not authorized. Please, log in");
             }

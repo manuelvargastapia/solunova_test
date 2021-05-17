@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
-import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
+import { register } from '../../../helpers/api';
 import ErrorMessage from '../../UI/ErrorMessage';
 import Form from '../../UI/Form';
 import Input from '../../UI/Input';
@@ -28,29 +28,19 @@ const Register = () => {
     const registerHandler = async (event) => {
         event.preventDefault();
 
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
         try {
-            const { data } = await axios.post(
-                '/api/users',
-                {
-                    username: usernameInputRef.current.value,
-                    firstname: firstnameInputRef.current.value,
-                    lastname: lastnameInputRef.current.value,
-                    email: emailInputRef.current.value,
-                    password: passwordInputRef.current.value,
-                },
-                config
-            );
+            const authToken = await register({
+                username: usernameInputRef.current.value,
+                firstname: firstnameInputRef.current.value,
+                lastname: lastnameInputRef.current.value,
+                email: emailInputRef.current.value,
+                password: passwordInputRef.current.value,
+            });
 
-            localStorage.setItem('authToken', data.token);
+            localStorage.setItem('authToken', authToken);
             history.push('/login');
         } catch (error) {
-            setError(error.response.data.data.error);
+            setError(error);
             setTimeout(() => {
                 setError('');
             }, 5000);
