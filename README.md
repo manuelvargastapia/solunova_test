@@ -22,10 +22,11 @@ The Home page is inspired by [Jacob's design](https://dribbble.com/shots/1304230
 
 ### Run
 
-1. Clone the repo: `git clone git@github.com:manuelvargastapia/solunova_test.git`.*
-2. Build the images and run all the containers jointly: `sudo docker-compose up`.**
-3. Visit http://localhost:5000 to see the app.
-4. When finish, tear down the containers: `sudo docker-compose down`.
+1. Install [Git LFS](https://git-lfs.github.com/). This project keeps track of [frontend/public/videos/trailer.mp4](frontend/public/videos/trailer.mp4) with Git LFS, so you'll need to install it to be able to include the trailer video when cloning the repo. Alternatively, you could simply download the file from Github and make the replacement manually.
+2. Clone the repo: `git clone git@github.com:manuelvargastapia/solunova_test.git`.
+3. Build the images and run all the containers jointly: `sudo docker-compose up`.*
+4. Visit http://localhost:5000 to see the app.
+5. When finish, tear down the containers: `sudo docker-compose down`.
 
 Use the following settings to connect to the database:
 
@@ -37,6 +38,4 @@ Use the following settings to connect to the database:
 
 During development, tune the setting in [backend/src/config/db_config.js](backend/src/config/db_config.js). Note that a random port **2345** has been used to avoid potential conflict with running instances; see [docker-compose.yml](docker-compose.yml).
 
-*Consider that the [frontend/public/videos/trailer.mp4](frontend/public/videos/trailer.mp4) file is versioned using [Git LFS](https://git-lfs.github.com/). Only by cloning the repo, the file will be included in the local copy. Downloading as a ZIP will not have the same effect.
-
-**Note that `sudo` is not required if [this optional configuration](https://docs.docker.com/engine/install/linux-postinstall/) is implemented.
+*Note that `sudo` is not required if [this optional configuration](https://docs.docker.com/engine/install/linux-postinstall/) is implemented.
