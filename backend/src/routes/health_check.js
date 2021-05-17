@@ -2,7 +2,8 @@
 
 const router = require('express').Router();
 
-router.get('/health_check', (req, res) => {
+// Simple health check endpoint to sync services in docker-compose.yml
+router.get('/health_check', (_, res) => {
     res.status(200).send();
 });
 

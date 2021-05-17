@@ -21,6 +21,7 @@ const getUser = async (req, res, next) => {
     const { authorization } = req.headers;
     let token;
 
+    // Extract raw token
     if (authorization && authorization.startsWith('Bearer')) {
         token = authorization.split(' ')[1];
     }
@@ -30,6 +31,7 @@ const getUser = async (req, res, next) => {
     }
 
     try {
+        // Decode raw token to filter the corresponding user
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findByPk(decoded.id);
 

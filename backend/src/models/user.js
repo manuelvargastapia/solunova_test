@@ -4,6 +4,11 @@ const { Model } = require('sequelize');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// "User" model.
+//
+// It models the data required to create a register in the "User".
+// It also provides some utility methods to perform JWT validations
+// in controllers.
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         static associate({ Session }) {

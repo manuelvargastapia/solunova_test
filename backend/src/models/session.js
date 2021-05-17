@@ -2,6 +2,10 @@
 
 const { Model } = require('sequelize');
 
+// "Session" model.
+//
+// It models the data required to create a register in the "Session"
+// table that stores any users' session instance to generate a log.
 module.exports = (sequelize, DataTypes) => {
     class Session extends Model {
         static associate({ User }) {

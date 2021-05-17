@@ -8,6 +8,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/db_config.js')[env];
 const db = {};
 
+// Create a Sequelize using the values from ../../config/db_config.js
 let sequelize = new Sequelize(
     config.database,
     config.username,
@@ -20,6 +21,7 @@ let sequelize = new Sequelize(
     }
 );
 
+// Export all the models
 fs.readdirSync(__dirname)
     .filter((file) => {
         return (
