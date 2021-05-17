@@ -22,11 +22,10 @@ The Home page is inspired by [Jacob's design](https://dribbble.com/shots/1304230
 
 ### Run
 
-Build the images and run all the containers jointly: `sudo docker-compose up`.*
-
-Tear down the containers: `sudo docker-compose down`.
-
-Visit http://localhost:5000 to see the app.
+1. Clone the repo: `git clone git@github.com:manuelvargastapia/solunova_test.git`.
+2. Build the images and run all the containers jointly: `sudo docker-compose up`.*
+3. Visit http://localhost:5000 to see the app.
+4. When finish, tear down the containers: `sudo docker-compose down`.
 
 Use the following settings to connect to the database:
 
