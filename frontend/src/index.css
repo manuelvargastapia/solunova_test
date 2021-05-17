@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #eee;
+    background-color: #303030;
+}
+
+::selection {
+    color: #fff;
+    background: #d35400;
+}
+
+a {
+    color: #fff67a;
+}
+
+@font-face {
+    font-family: 'Horizon';
+    src: local('Horizon'), url('./assets/fonts/horizon.ttf') format('truetype');
+    font-weight: normal;
+}

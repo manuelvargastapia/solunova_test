@@ -1,0 +1,22 @@
+{
+    "name": "backend",
+    "version": "0.0.1",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js"
+    },
+    "author": "Manuel Vargas",
+    "license": "AGPL-3.0",
+    "dependencies": {
+        "bcrypt": "5.0.1",
+        "express": "4.17.1",
+        "express-joi-validation": "5.0.0",
+        "jsonwebtoken": "8.5.1",
+        "pg": "8.6.0",
+        "pg-hstore": "2.3.3",
+        "sequelize": "6.6.2"
+    },
+    "devDependencies": {
+        "sequelize-cli": "6.2.0"
+    }
+}

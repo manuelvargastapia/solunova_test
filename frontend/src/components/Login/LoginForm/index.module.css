@@ -1,0 +1,26 @@
+.subtext {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 3rem;
+    text-shadow: 0 0 3px #303030, 0 0 5px #303030;
+}
+
+.logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: flex;
+        position: relative;
+        max-width: 50%;
+        margin: 3rem auto 0 auto;
+    }
+}
+
+@media (max-width: 540px) {
+    .logo {
+        max-width: 70%;
+    }
+}

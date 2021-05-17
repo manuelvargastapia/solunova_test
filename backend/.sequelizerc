@@ -1,0 +1,8 @@
+var path = require('path')
+
+// Override Sequelize settings to be able to move files conveniently
+module.exports = {
+  'config':          path.resolve('src', 'config', 'db_config.js'),
+  'migrations-path': path.resolve('src', 'migrations'),
+  'models-path':     path.resolve('src', 'models'),
+}

@@ -1,0 +1,30 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.item-label {
+    width: fit-content;
+    word-wrap: break-word;
+    color: #fff67a;
+}
+
+.item-value {
+    text-align: end;
+    word-wrap: break-word;
+}
+
+@media (max-width: 1200px) {
+    .item {
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 0.6rem;
+    }
+
+    .item-value {
+        text-align: start;
+    }
+}

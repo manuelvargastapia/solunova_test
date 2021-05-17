@@ -1,0 +1,48 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 4rem;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.item:hover {
+    font-size: 45px;
+    transition: 0.3s;
+}
+
+.item img {
+    margin-right: 1rem;
+    width: 60px;
+    transition: 0.3s;
+}
+
+.item:hover img {
+    width: 70px;
+    transition: 0.3s;
+}
+
+@media (max-width: 1400px) {
+    .item {
+        font-size: 30px;
+        padding: 3rem auto;
+        margin: 0 2rem;
+    }
+
+    .item:hover {
+        font-size: 35px;
+    }
+
+    .item img {
+        margin-right: 1rem;
+        width: 50px;
+    }
+
+    .item:hover img {
+        width: 60px;
+    }
+}

@@ -1,0 +1,55 @@
+version: '3.9'
+
+services:
+    postgres:
+        image: postgres:13
+        container_name: solunova_test_postgres
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_DB: solunova_test_db
+            POSTGRES_PASSWORD: password
+        ports:
+            - '2345:5432' # A random host port is used to prevent conflicts
+
+        # Don't run the backend container until being in a healthy state.
+        # NOTE: this attribute is outdated, but it's enough for a simple demonstration
+        healthcheck:
+            test: ['CMD-SHELL', 'pg_isready -U postgres']
+            interval: 10s
+            timeout: 5s
+            retries: 5
+
+    backend:
+        container_name: solunova_test_backend
+        build: ./backend # Build image from Dockefile in /backend
+        ports:
+            - '3000:3000'
+        environment:
+            NODE_ENV: docker # Specify the environment to connect to the DB
+            DB_HOST: postgres
+            DB_NAME: solunova_test_db
+            DB_USER: postgres
+            DB_PASSWORD: password
+            DB_PORT: 5432
+            DB_DIALECT: postgres
+            # Only for demonstration purposes, the JWT secret is passed
+            # directly as environmental variable
+            JWT_SECRET: jWtsekR3t
+        depends_on: # Wait for DB being in a healthy state
+            postgres:
+                condition: service_healthy
+        healthcheck: # Don't run the client container until being in a healthy state
+            test:
+                ['CMD-SHELL', 'curl --fail http://localhost:3000/health_check']
+            interval: 5s
+            timeout: 3s
+            retries: 3
+
+    frontend:
+        container_name: solunova_test_frontend
+        build: ./frontend # Build image from Dockefile in /frontend
+        ports:
+            - '5000:5000'
+        depends_on:
+            backend:
+                condition: service_healthy
