@@ -45,7 +45,7 @@ services:
             timeout: 3s
             retries: 3
 
-    client:
+    frontend:
         container_name: solunova_test_frontend
         build: ./frontend # Build image from Dockefile in /frontend
         ports:
