@@ -13,10 +13,11 @@
     outline: none;
     background-color: #eee;
     font-size: 1rem;
+    border-radius: 50px;
 }
 
 .input input:focus {
-    outline: 2px solid #d35400;
+    box-shadow: 0 0 15px #d35400;
 }
 
 .input-icon {
