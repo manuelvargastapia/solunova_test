@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 import moment from 'moment';
+import useUserInfo from './hooks/useUserInfo';
 import ErrorMessage from '../UI/ErrorMessage';
 import BackgroundLogo from '../Layout/BackgroundLogo';
 import Menu from './Menu';
@@ -16,36 +15,8 @@ import newsIcon from '../../assets/images/icon_news.png';
 import classes from './index.module.css';
 
 const Home = () => {
-    const [error, setError] = useState('');
-    const [userInfo, setUserInfo] = useState();
     const history = useHistory();
-
-    useEffect(() => {
-        if (!localStorage.getItem('authToken')) {
-            history.push('/login');
-        }
-
-        const fetchUserInfo = async () => {
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `Bearer ${localStorage.getItem(
-                        'authToken'
-                    )}`,
-                },
-            };
-
-            try {
-                const { data } = await axios.get('/api/users', config);
-                setUserInfo(data.data.user);
-            } catch (error) {
-                localStorage.removeItem('authToken');
-                setError("You're not authorized. Please, log in");
-            }
-        };
-
-        fetchUserInfo();
-    }, [history]);
+    const [error, userInfo] = useUserInfo(history);
 
     const logoutHandler = () => {
         localStorage.removeItem('token');
